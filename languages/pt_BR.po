@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-03-18 01:13-0300\n"
+"PO-Revision-Date: 2021-03-18 01:17-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_x;_n;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/dpn-bulk-functions.php:10 includes/dpn-duplicate-functions.php:12
+msgid "Duplicate"
+msgstr "Duplicar"
+
+#: includes/dpn-bulk-functions.php:29 includes/dpn-bulk-functions.php:36
+msgid "Action failed."
+msgstr "A ação falhou."
+
+#: includes/dpn-duplicate-functions.php:34
+msgid " (copy)"
+msgstr " (cópia)"
+
+#: includes/dpn-duplicate-functions.php:74
+msgid "Invalid Post ID: "
+msgstr "ID do post inválido: "
+
+#: includes/dpn-duplicate-functions.php:83
+msgid "Post data not found."
+msgstr "Dados do post não encontrados."
+
+#: includes/dpn-duplicate-functions.php:90
+msgid "Action failed, could not duplicate the post."
+msgstr "A ação falhou, o post não pôde ser duplicado."
+
+#: includes/dpn-notice-functions.php:11
+#, php-format
+msgid "%s %s was duplicated."
+msgstr "%s %s foi duplicado."
+
+#: includes/dpn-notice-functions.php:12
+#, php-format
+msgid "%s %ss were duplicated."
+msgstr "%s %ss foram duplicados."
