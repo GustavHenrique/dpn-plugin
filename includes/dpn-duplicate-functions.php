@@ -9,7 +9,7 @@ function dpn_add_duplicate_link($actions, $post)
     if(!current_user_can('edit_posts')){
         return;
     }
-    $actions['duplicate'] = '<a href="'. wp_nonce_url('admin.php?action=dpn_duplicate_post&post='. $post->ID, basename(__FILE__), 'nonce').'" title ="'._x('Duplicate', 'verb').'"rel="permalink">' ._x('Duplicate', 'verb').'</a>' ;
+    $actions['duplicate'] = '<a href="'. wp_nonce_url('admin.php?action=dpn_duplicate_post&post='. $post->ID, basename(__FILE__), 'nonce').'" title ="'.esc_html_x('Duplicate', 'verb').'"rel="permalink">' .esc_html_x('Duplicate', 'verb').'</a>' ;
     return $actions;
 }
 
