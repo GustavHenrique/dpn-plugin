@@ -7,7 +7,7 @@
  * @return array The modified array of items to be placed in the bulk actions area.
  */
 function dpn_bulk_actions($dpn_bulk_array){
-    $dpn_bulk_array['dpn_bulk_duplicate'] = __('Duplicate');
+    $dpn_bulk_array['dpn_bulk_duplicate'] = __('Duplicate', 'dpn-plugin');
     return $dpn_bulk_array;
 }
 
@@ -26,14 +26,14 @@ function dpn_bulk_action_handler($redirect, $doaction, $object_ids){
 
     if($doaction == 'dpn_bulk_duplicate'){
         if(!is_array($object_ids)){
-            $str = __("Action failed.");
+            $str = __("Action failed.", 'dpn-plugin');
             wp_die($str);
         }
         foreach($object_ids as $dpn_post_id){
             $dpn_post_data = get_post($dpn_post_id);
             if(!empty($dpn_post_data)){
                 if(dpn_duplicate_post($dpn_post_id) === false){
-                    $str = __("Action failed.");
+                    $str = __("Action failed.", 'dpn-plugin');
                     wp_die($str);  
                 }
                 else{

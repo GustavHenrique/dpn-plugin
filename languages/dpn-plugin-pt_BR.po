@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-18 02:30-0300\n"
-"PO-Revision-Date: 2021-03-18 02:31-0300\n"
+"POT-Creation-Date: 2021-03-18 05:40-0300\n"
+"PO-Revision-Date: 2021-03-18 05:40-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -23,19 +23,19 @@ msgstr "Duplicar"
 msgid "Action failed."
 msgstr "A ação falhou."
 
-#: includes/dpn-duplicate-functions.php:34
+#: includes/dpn-duplicate-functions.php:25
 msgid " (copy)"
 msgstr " (cópia)"
 
-#: includes/dpn-duplicate-functions.php:74
+#: includes/dpn-duplicate-functions.php:76
 msgid "Invalid Post ID: "
 msgstr "ID do post inválido: "
 
-#: includes/dpn-duplicate-functions.php:83
+#: includes/dpn-duplicate-functions.php:85
 msgid "Post data not found."
 msgstr "Dados do post não encontrados."
 
-#: includes/dpn-duplicate-functions.php:90
+#: includes/dpn-duplicate-functions.php:92
 msgid "Action failed, could not duplicate the post."
 msgstr "A ação falhou, o post não pôde ser duplicado."
 

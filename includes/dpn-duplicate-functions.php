@@ -9,7 +9,8 @@ function dpn_add_duplicate_link($actions, $post)
     if(!current_user_can('edit_posts')){
         return;
     }
-    $actions['duplicate'] = '<a href="'. wp_nonce_url('admin.php?action=dpn_duplicate_post&post='. $post->ID, basename(__FILE__), 'nonce').'" title ="'.esc_html_x('Duplicate', 'verb').'"rel="permalink">' .esc_html_x('Duplicate', 'verb').'</a>' ;
+    $str = esc_html__('Duplicate', 'dpn-plugin');
+    $actions['duplicate'] = '<a href="'. wp_nonce_url('admin.php?action=dpn_duplicate_post&post='. $post->ID, basename(__FILE__), 'nonce').'" title ="'. $str .'"rel="permalink">' . $str .'</a>' ;
     return $actions;
 }
 
@@ -21,6 +22,7 @@ function dpn_add_duplicate_link($actions, $post)
  */
 function dpn_get_post_parameters($post_ID){
     $dpn_post = get_post($post_ID);
+    $str = __(' (copy)', 'dpn-plugin');
     $dpn_data = array(
         'comment_status'        => $dpn_post->comment_status,
         'ping_status'           => $dpn_post->ping_status,
@@ -31,7 +33,7 @@ function dpn_get_post_parameters($post_ID){
         'post_parent'           => $dpn_post->post_parent,
         'post_password'         => $dpn_post->post_password,
         'post_status'           => $dpn_post->post_status,
-        'post_title'            => ($dpn_post->post_title . _x(' (copy)', 'noun')),
+        'post_title'            => ($dpn_post->post_title . $str),
         'post_type'             => $dpn_post->post_type,
         'to_ping'               => $dpn_post->to_ping,
         'menu_order'            => $dpn_post->menu_order,
@@ -71,7 +73,7 @@ function dpn_duplicate_post($dpn_post_ID){
     $dpn_post_data = get_post($dpn_post_ID);
 
     if(empty($dpn_post_data)){
-        $str = __("Invalid Post ID: ");
+        $str = __("Invalid Post ID: ", 'dpn-plugin');
         wp_die($str . $dpn_post_ID);
     }
 
@@ -80,14 +82,14 @@ function dpn_duplicate_post($dpn_post_ID){
     if(isset($dpn_post_data)){
          $dpn_post_arr = dpn_get_post_parameters($dpn_post_ID);
     }else{
-        $str = __('Post data not found.');
+        $str = __('Post data not found.', 'dpn-plugin');
         wp_die($str);
     }
 
     $dpn_copied_post_id = wp_insert_post($dpn_post_arr);
 
     if(is_wp_error($dpn_copied_post_id)){
-        $str = __("Action failed, could not duplicate the post.");
+        $str = __("Action failed, could not duplicate the post.", 'dpn-plugin');
         wp_die($str);
     }
 

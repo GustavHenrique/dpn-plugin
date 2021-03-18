@@ -44,7 +44,7 @@ load_plugin_textdomain('dpn-plugin', FALSE, dirname(plugin_basename(__FILE__)) .
 add_action('plugins_loaded', 'load_plugin_textdomain');
 
 function my_plugin_load_my_own_textdomain( $mofile, $domain ) {
-    if ( 'my-domain' === $domain && false !== strpos( $mofile, WP_LANG_DIR . '/plugins/' ) ) {
+    if ( 'dpn-plugin' === $domain && false !== strpos( $mofile, WP_LANG_DIR . '/plugins/' ) ) {
         $locale = apply_filters( 'plugin_locale', determine_locale(), $domain );
         $mofile = WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) . '/languages/' . $domain . '-' . $locale . '.mo';
     }
