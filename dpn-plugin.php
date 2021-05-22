@@ -41,17 +41,13 @@ function dpn_removable_query_args($dpn_removable_query_args){
  * Loading plugin translation files
  */
 load_plugin_textdomain('dpn-plugin', FALSE, dirname(plugin_basename(__FILE__)) . '/languages/');
-add_action('plugins_loaded', 'load_plugin_textdomain');
+add_action('plugins_loaded', 'dpn_load_my_own_textdomain');
 
-function my_plugin_load_my_own_textdomain( $mofile, $domain ) {
-    if ( 'dpn-plugin' === $domain && false !== strpos( $mofile, WP_LANG_DIR . '/plugins/' ) ) {
-        $locale = apply_filters( 'plugin_locale', determine_locale(), $domain );
-        $mofile = WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) . '/languages/' . $domain . '-' . $locale . '.mo';
-    }
-    return $mofile;
+function dpn_load_my_own_textdomain() {
+
+    load_plugin_textdomain('dpn-plugin', FALSE, dirname(plugin_basename(__FILE__)) . '/languages/');
+
 }
-
-add_filter( 'load_textdomain_mofile', 'my_plugin_load_my_own_textdomain', 10, 2 );
 
 add_filter('page_row_actions', 'dpn_add_duplicate_link', 10, 2);
 add_filter('post_row_actions', 'dpn_add_duplicate_link', 10, 2);
